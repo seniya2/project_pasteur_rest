@@ -31,100 +31,100 @@ public class EnergyReport implements Serializable {
 	
 	@NotNull
 	private @Getter @Setter String daily;	
-	@NotNull @Column(columnDefinition="float default '0'")
-	private @Getter @Setter double powerMonth; 
-	@NotNull @Column(columnDefinition="float default '0'")
-	private @Getter @Setter double powerToday; 
-	@NotNull @Column(columnDefinition="float default '0'")
-	private @Getter @Setter double co20Sum;
-	@NotNull @Column(columnDefinition="float default '0'")
-	private @Getter @Setter double co20Today;
-	@NotNull @Column(columnDefinition="float default '0'")
-	private @Getter @Setter double co20Total; 
-	@NotNull @Column(columnDefinition="float default '0'")
-	private @Getter @Setter double co21Sum;
-	@NotNull @Column(columnDefinition="float default '0'")
-	private @Getter @Setter double co21Today;
-	@NotNull @Column(columnDefinition="float default '0'")
-	private @Getter @Setter double co21Total; 
-	@NotNull @Column(columnDefinition="float default '0'")
-	private @Getter @Setter double co22Sum;
-	@NotNull @Column(columnDefinition="float default '0'")
-	private @Getter @Setter double co22Today;
-	@NotNull @Column(columnDefinition="float default '0'")
-	private @Getter @Setter double co22Total; 
-	@NotNull @Column(columnDefinition="float default '0'")
-	private @Getter @Setter double co23Sum;
-	@NotNull @Column(columnDefinition="float default '0'")
-	private @Getter @Setter double co23Today;
-	@NotNull @Column(columnDefinition="float default '0'")
-	private @Getter @Setter double co23Total; 
-	@NotNull @Column(columnDefinition="float default '0'")
-	private @Getter @Setter double co24Sum;
-	@NotNull @Column(columnDefinition="float default '0'")
-	private @Getter @Setter double co24Today;
-	@NotNull @Column(columnDefinition="float default '0'")
-	private @Getter @Setter double co24Total; 
-	@NotNull @Column(columnDefinition="float default '0'")
-	private @Getter @Setter double waterSum;
-	@NotNull @Column(columnDefinition="float default '0'")
-	private @Getter @Setter double waterToday;
-	@NotNull @Column(columnDefinition="float default '0'")
-	private @Getter @Setter double waterTotal; 
-	@NotNull @Column(columnDefinition="float default '0'")
-	private @Getter @Setter double boiler1Sum;
-	@NotNull @Column(columnDefinition="float default '0'")
-	private @Getter @Setter double boiler1Today;
-	@NotNull @Column(columnDefinition="float default '0'")
-	private @Getter @Setter double boiler1Total; 
-	@NotNull @Column(columnDefinition="float default '0'")
-	private @Getter @Setter double boiler2Sum; 
-	@NotNull @Column(columnDefinition="float default '0'")
-	private @Getter @Setter double boiler2Today;
-	@NotNull @Column(columnDefinition="float default '0'")
-	private @Getter @Setter double boiler2Total; 
-	@NotNull @Column(columnDefinition="float default '0'")
-	private @Getter @Setter double wastesSum; 
-	@NotNull @Column(columnDefinition="float default '0'")
-	private @Getter @Setter double wastesToday;
-	@NotNull @Column(columnDefinition="float default '0'")
-	private @Getter @Setter double wastesTotal; 
-	@NotNull @Column(columnDefinition="float default '0'")
-	private @Getter @Setter double heat1Sum; 
-	@NotNull @Column(columnDefinition="float default '0'")
-	private @Getter @Setter double heat1Today; 
-	@NotNull @Column(columnDefinition="float default '0'")
-	private @Getter @Setter double heat1Total; 
-	@NotNull @Column(columnDefinition="float default '0'")
-	private @Getter @Setter double heat2Sum; 
-	@NotNull @Column(columnDefinition="float default '0'")
-	private @Getter @Setter double heat2Today; 
-	@NotNull @Column(columnDefinition="float default '0'")
-	private @Getter @Setter double heat2Total; 
-	@NotNull @Column(columnDefinition="float default '0'")
-	private @Getter @Setter double oilSum; 
-	@NotNull @Column(columnDefinition="float default '0'")
-	private @Getter @Setter double oilToday; 
-	@NotNull @Column(columnDefinition="float default '0'")
-	private @Getter @Setter double oilTotal; 
-	@NotNull @Column(columnDefinition="float default '0'")
-	private @Getter @Setter double freeze1Sum; 
-	@NotNull @Column(columnDefinition="float default '0'")
-	private @Getter @Setter double freeze1Today; 
-	@NotNull @Column(columnDefinition="float default '0'")
-	private @Getter @Setter double freeze1Total; 
-	@NotNull @Column(columnDefinition="float default '0'")
-	private @Getter @Setter double freeze2Sum; 
-	@NotNull @Column(columnDefinition="float default '0'")
-	private @Getter @Setter double freeze2Today; 
-	@NotNull @Column(columnDefinition="float default '0'")
-	private @Getter @Setter double freeze2Total; 
-	@NotNull @Column(columnDefinition="float default '0'")
-	private @Getter @Setter double wattSum; 
-	@NotNull @Column(columnDefinition="float default '0'")
-	private @Getter @Setter double wattToday; 
-	@NotNull @Column(columnDefinition="float default '0'")
-	private @Getter @Setter double wattTotal; 
+	@NotNull @Column
+	private @Getter @Setter String powerMonth; 
+	@NotNull @Column
+	private @Getter @Setter String powerToday; 
+	@NotNull @Column
+	private @Getter @Setter String co20Sum;
+	@NotNull @Column
+	private @Getter @Setter String co20Today;
+	@NotNull @Column
+	private @Getter @Setter String co20Total; 
+	@NotNull @Column
+	private @Getter @Setter String co21Sum;
+	@NotNull @Column
+	private @Getter @Setter String co21Today;
+	@NotNull @Column
+	private @Getter @Setter String co21Total; 
+	@NotNull @Column
+	private @Getter @Setter String co22Sum;
+	@NotNull @Column
+	private @Getter @Setter String co22Today;
+	@NotNull @Column
+	private @Getter @Setter String co22Total; 
+	@NotNull @Column
+	private @Getter @Setter String co23Sum;
+	@NotNull @Column
+	private @Getter @Setter String co23Today;
+	@NotNull @Column
+	private @Getter @Setter String co23Total; 
+	@NotNull @Column
+	private @Getter @Setter String co24Sum;
+	@NotNull @Column
+	private @Getter @Setter String co24Today;
+	@NotNull @Column
+	private @Getter @Setter String co24Total; 
+	@NotNull @Column
+	private @Getter @Setter String waterSum;
+	@NotNull @Column
+	private @Getter @Setter String waterToday;
+	@NotNull @Column
+	private @Getter @Setter String waterTotal; 
+	@NotNull @Column
+	private @Getter @Setter String boiler1Sum;
+	@NotNull @Column
+	private @Getter @Setter String boiler1Today;
+	@NotNull @Column
+	private @Getter @Setter String boiler1Total; 
+	@NotNull @Column
+	private @Getter @Setter String boiler2Sum; 
+	@NotNull @Column
+	private @Getter @Setter String boiler2Today;
+	@NotNull @Column
+	private @Getter @Setter String boiler2Total; 
+	@NotNull @Column
+	private @Getter @Setter String wastesSum; 
+	@NotNull @Column
+	private @Getter @Setter String wastesToday;
+	@NotNull @Column
+	private @Getter @Setter String wastesTotal; 
+	@NotNull @Column
+	private @Getter @Setter String heat1Sum; 
+	@NotNull @Column
+	private @Getter @Setter String heat1Today; 
+	@NotNull @Column
+	private @Getter @Setter String heat1Total; 
+	@NotNull @Column
+	private @Getter @Setter String heat2Sum; 
+	@NotNull @Column
+	private @Getter @Setter String heat2Today; 
+	@NotNull @Column
+	private @Getter @Setter String heat2Total; 
+	@NotNull @Column
+	private @Getter @Setter String oilSum; 
+	@NotNull @Column
+	private @Getter @Setter String oilToday; 
+	@NotNull @Column
+	private @Getter @Setter String oilTotal; 
+	@NotNull @Column
+	private @Getter @Setter String freeze1Sum; 
+	@NotNull @Column
+	private @Getter @Setter String freeze1Today; 
+	@NotNull @Column
+	private @Getter @Setter String freeze1Total; 
+	@NotNull @Column
+	private @Getter @Setter String freeze2Sum; 
+	@NotNull @Column
+	private @Getter @Setter String freeze2Today; 
+	@NotNull @Column
+	private @Getter @Setter String freeze2Total; 
+	@NotNull @Column
+	private @Getter @Setter String wattSum; 
+	@NotNull @Column
+	private @Getter @Setter String wattToday; 
+	@NotNull @Column
+	private @Getter @Setter String wattTotal; 
 	@NotNull @Column(columnDefinition="int default '0'")
 	private @Getter @Setter int item1Sum;
 	@NotNull @Column(columnDefinition="int default '0'")
