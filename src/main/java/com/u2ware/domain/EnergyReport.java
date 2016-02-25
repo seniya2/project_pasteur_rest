@@ -125,18 +125,18 @@ public class EnergyReport implements Serializable {
 	private @Getter @Setter String wattToday; 
 	@NotNull @Column
 	private @Getter @Setter String wattTotal; 
-	@NotNull @Column(columnDefinition="int default '0'")
-	private @Getter @Setter int item1Sum;
-	@NotNull @Column(columnDefinition="int default '0'")
-	private @Getter @Setter int item1Today;
-	@NotNull @Column(columnDefinition="int default '0'")
-	private @Getter @Setter int item1Total;
-	@NotNull @Column(columnDefinition="int default '0'")
-	private @Getter @Setter int item2Sum;
-	@NotNull @Column(columnDefinition="int default '0'")
-	private @Getter @Setter int item2Today;
-	@NotNull @Column(columnDefinition="int default '0'")
-	private @Getter @Setter int item2Total;
+	@NotNull @Column
+	private @Getter @Setter String item1Sum;
+	@NotNull @Column
+	private @Getter @Setter String item1Today;
+	@NotNull @Column
+	private @Getter @Setter String item1Total;
+	@NotNull @Column
+	private @Getter @Setter String item2Sum;
+	@NotNull @Column
+	private @Getter @Setter String item2Today;
+	@NotNull @Column
+	private @Getter @Setter String item2Total;
 	
 	public @Getter @Setter String d1012; 
 	public @Getter @Setter String d1013; 

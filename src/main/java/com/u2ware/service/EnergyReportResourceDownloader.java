@@ -71,25 +71,29 @@ public class EnergyReportResourceDownloader implements ResourceLoaderAware{
 
     			Sheet sheet = workbook.getSheetAt(0);
     			
-    			for(int rownum = sheet.getFirstRowNum(); rownum < sheet.getLastRowNum(); rownum++ ){
+    			for(int rownum = sheet.getFirstRowNum(); rownum <= sheet.getLastRowNum(); rownum++ ){
     				
     				Row row = sheet.getRow(rownum);
     				
         			for(int cellnum = row.getFirstCellNum(); cellnum < row.getLastCellNum(); cellnum++ ){
         				
         				Cell cell = row.getCell(cellnum);
+
         				
         				try{
-        					String contents = cell.getStringCellValue();
+            				String contents = cell.getStringCellValue();       					
         					
         					Expression exp = parser.parseExpression(contents, parserContext);
         					Object value = exp.getValue(energyReport);
 
         					if(value != null){
         						cell.setCellValue(value.toString());
+        					}else{
+        						cell.setCellValue("");
         					}
         				}catch(Exception e){
-        					
+        					logger.info(cell, e);
+        					cell.setCellValue("");
         				}
         			}
     			}
