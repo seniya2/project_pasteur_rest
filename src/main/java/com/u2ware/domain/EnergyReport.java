@@ -6,6 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 
 import lombok.Getter;
@@ -31,6 +32,8 @@ public class EnergyReport implements Serializable {
 	
 	@NotNull
 	private @Getter @Setter String daily;	
+	@Transient
+	private @Getter @Setter String dailyText;
 	@NotNull @Column
 	private @Getter @Setter String powerMonth; 
 	@NotNull @Column

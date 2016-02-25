@@ -52,9 +52,12 @@ public class EnergyReportResourceDownloader implements ResourceLoaderAware{
 	}
 	
 	@RequestMapping(value="/download/energyReport", method=RequestMethod.GET)
-	public ModelAndView download(@RequestParam(name="daliy") final String daliy) {
+	public ModelAndView download(@RequestParam(name="daliy") final String daliy) throws Exception{
 		 
 		final EnergyReport energyReport = energyReportResource.findByDaily(daliy).iterator().next();
+		
+		energyReport.setDailyText(getDailyText(daliy));
+		
     	return new ModelAndView(new AbstractXlsxView(){
 
     		@Override
@@ -110,12 +113,6 @@ public class EnergyReportResourceDownloader implements ResourceLoaderAware{
         						cell.setCellValue("");
         					}
         					
-
-        					if (rownum == 2 && cellnum ==0) {
-        						String reportDate = getDateDay(daliy);
-        						cell.setCellValue(reportDate);
-        						//cell.setCellValue("날짜 넣는곳");
-        					}
         					
         				}catch(Exception e){
         					logger.info(cell, e);
@@ -128,7 +125,7 @@ public class EnergyReportResourceDownloader implements ResourceLoaderAware{
 	}
 
 	
-	public String getDateDay(String date) throws Exception {
+	public String getDailyText(String date) throws Exception {
 		 	     
 	    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd") ;
 	    Date nDate = dateFormat.parse(date) ;	     
