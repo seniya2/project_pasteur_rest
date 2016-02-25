@@ -1,6 +1,10 @@
 package com.u2ware.service;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -48,7 +52,7 @@ public class EnergyReportResourceDownloader implements ResourceLoaderAware{
 	}
 	
 	@RequestMapping(value="/download/energyReport", method=RequestMethod.GET)
-	public ModelAndView download(@RequestParam(name="daliy") String daliy) {
+	public ModelAndView download(@RequestParam(name="daliy") final String daliy) {
 		 
 		final EnergyReport energyReport = energyReportResource.findByDaily(daliy).iterator().next();
     	return new ModelAndView(new AbstractXlsxView(){
@@ -66,6 +70,20 @@ public class EnergyReportResourceDownloader implements ResourceLoaderAware{
 					return new XSSFWorkbook();
 				}
     		}
+    		
+    		@Override
+    		protected void prepareResponse(HttpServletRequest request, HttpServletResponse response) {
+    			String name = "일일업무일지("  + daliy+").xlsx";
+    			try {
+					name = new String(name.getBytes("UTF-8"), "ISO-8859-1");
+				} catch (UnsupportedEncodingException e) {
+					name = "report("  + daliy+").xlsx";
+					e.printStackTrace();
+				}
+    			response.setHeader("Content-Disposition", "attachment; filename="+name);
+    			super.prepareResponse(request, response);
+    		}
+    		
     		
     		protected void buildExcelDocument(Map<String, Object> model, Workbook workbook, HttpServletRequest request, HttpServletResponse response) throws Exception {
 
@@ -91,6 +109,14 @@ public class EnergyReportResourceDownloader implements ResourceLoaderAware{
         					}else{
         						cell.setCellValue("");
         					}
+        					
+
+        					if (rownum == 2 && cellnum ==0) {
+        						String reportDate = getDateDay(daliy);
+        						cell.setCellValue(reportDate);
+        						//cell.setCellValue("날짜 넣는곳");
+        					}
+        					
         				}catch(Exception e){
         					logger.info(cell, e);
         					cell.setCellValue("");
@@ -101,6 +127,14 @@ public class EnergyReportResourceDownloader implements ResourceLoaderAware{
     	});
 	}
 
+	
+	public String getDateDay(String date) throws Exception {
+		 	     
+	    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd") ;
+	    Date nDate = dateFormat.parse(date) ;	     
+	    SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy년 M월 d일 (E)");	    
+	    return sdf2.format(nDate);
+	}
 	
 	
 }
